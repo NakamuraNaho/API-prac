@@ -13,16 +13,17 @@ import axios from "axios"
 export default{
   data(){
     return{
-      coad:""
+      coad:"",
+      adress:""
     }
 
   },
 
   methods:{
     zipcoad(){
-      url = "https://apis.postcode-jp.com/api/v4/" + this.coad + '?apiKey=' + ViYTWVzJn5CupAeLkQRxCuxs4TtSZPQLZaMBaBw;
+      const url = "https://apis.postcode-jp.com/api/v4/" + this.coad + '?apiKey=' + "ViYTWVzJn5CupAeLkQRxCuxs4TtSZPQLZaMBaBw";
 
-      axios.get(url).then(response => {this.json = response ["coad"]})
+      axios.get(url).then(response => {this.result = response.data.adress})
        
 
       
