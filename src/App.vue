@@ -2,7 +2,7 @@
   <div id="app">
     <input type="text" v-model="coad" value="zipcoadを取得">
     <button @click="zipcoad(coad)">住所自動入力</button>
-    <p>Adress:{{ adress }}</p>
+    <p>Adress:{{ postcode }}</p>
 
   </div>
   
@@ -14,7 +14,8 @@ export default{
   data(){
     return{
       coad:"",
-      adress:""
+      postcode:""
+      
     }
 
   },
@@ -23,7 +24,7 @@ export default{
     zipcoad(){
       const url = "https://apis.postcode-jp.com/api/v4/" + this.coad + '?apiKey=' + "ViYTWVzJn5CupAeLkQRxCuxs4TtSZPQLZaMBaBw";
 
-      axios.get(url).then(response => {this.result = response.data.adress})
+      axios.get(url).then(response => {this.result = response.postcode})
        
 
       
